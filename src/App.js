@@ -1,19 +1,35 @@
 
 import './App.css';
-import Header from './assets/Header';
-import Destacado from './assets/Destacado';
-import Cupones from './assets/Cupones';
-import PromoApp from './assets/PromoApp';
-import Footer from './assets/Footer';
+import Header from './Componente-menu/Header';
+import Footer from './Componente-footer/Footer';
+import ItemListContainer from './Componente-body/ItemListContainer';
 
 function App() {
+  const productos = [
+    { id:1, title: "Bidon 20 lts", precio: "550", image: "Bidon-retornable-de-agua-x-20-litros.jpg" },
+    { id:2, title: "Bidon 10 lts", precio: "300", image: "Bidon-retornable-de-agua-x-10-litros.jpg" },
+    { id:3, title: "Bidon 8 lts", precio: "250", image: "Bidon-retornable-de-agua-x-8-litros.jpg" },
+    { id:4, title: "Sifon plastico", precio: "100", image: "Sifon-plastico-de-soda-x-1-25-litros.jpg" },
+    { id:5, title: "Sifon vidrio", precio: "90", image: "Sifon-de-vidrio-de-soda-x-1-litro.jpg" },
+]
+
+const items= productos.map(items=> (
+  <ItemListContainer valor={items.title}/>
+));
+
   return (
-    <div className='container-fluid fondo_amarillo'>
+    <div className='container-fluid fondo_oscuro'>
     <Header/>
+    <div className='container'>
+      <main valor="Productos"/>
+      <div className='row d-flex justify-content-center'>
+        {items}
+      </div>
+
+    </div>
     <hr/>
-    <Destacado/>
-    <Cupones/>
-    <PromoApp/>
+    <ItemListContainer/>
+    
     <Footer/>
     </div>
   );

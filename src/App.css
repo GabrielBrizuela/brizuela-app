@@ -3,11 +3,16 @@
   margin: 0;
 }
 
-.fondo_amarillo {
-  background-color: #f5ebd2;
+.fondo_oscuro {
+  background-color: black;
 }
 
 .link_header {
-  color: #4f2414;
+  color: white;
   font-weight: bold;
+}
+
+img{
+    width: 50px;
+    
 }
